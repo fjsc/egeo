@@ -20,6 +20,7 @@ export class StSearchComponent implements OnChanges, OnDestroy, OnInit {
    @Input() qaTag: string;
    @Input() searchOnlyOnClick: boolean = false;
    @Input() value: string;
+   @Input() disabled: boolean = false;
 
    @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
@@ -30,7 +31,7 @@ export class StSearchComponent implements OnChanges, OnDestroy, OnInit {
    private lastEmited: string | undefined = undefined;
 
    public launchSearch(force: boolean = false, isFromButton: boolean = false): void {
-      if (this.canSearch(isFromButton) && this.isDefined() && this.isEqualPrevious(force) && this.checkMins()) {
+      if (this.canSearch(isFromButton) && this.isDefined() && !this.disabled && this.isEqualPrevious(force) && this.checkMins()) {
          this.lastEmited = this.searchBox.value;
          this.search.emit(this.lastEmited);
       }
@@ -59,6 +60,9 @@ export class StSearchComponent implements OnChanges, OnDestroy, OnInit {
    public ngOnChanges(changes: SimpleChanges): void {
       this.manageSubscription();
       this.updateValue(changes);
+      if (changes.disabled) {
+         this.checkDisabled();
+      }
    }
 
    public ngOnInit(): void {
@@ -66,13 +70,21 @@ export class StSearchComponent implements OnChanges, OnDestroy, OnInit {
       if (this.value) {
          this.searchBox.setValue(this.value);
       }
-
+      this.checkDisabled();
       this.manageSubscription();
    }
 
    public ngOnDestroy(): void {
       if (this.sub !== undefined) {
          this.sub.unsubscribe();
+      }
+   }
+
+   private checkDisabled(): void {
+      if (this.disabled) {
+         this.searchBox.disable();
+      } else {
+         this.searchBox.enable();
       }
    }
 

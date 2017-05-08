@@ -306,4 +306,13 @@ describe('StSearchComponent', () => {
 
       expect((<HTMLInputElement>input.nativeElement).value).toEqual('new value');
    });
+
+   it('should be able to change to disabled state', () => {
+      comp.disabled = true;
+      fixture.detectChanges();
+      let input: DebugElement = fixture.debugElement.query(By.css('input'));
+
+      let disabledState: string = input.nativeElement.getAttribute('disabled');
+      expect(disabledState).not.toBeNull();
+   });
 });
