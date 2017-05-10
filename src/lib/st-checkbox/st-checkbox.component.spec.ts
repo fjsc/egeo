@@ -3,30 +3,24 @@ import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core
 import { FormControl, FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 
-import { SelectOneDispatcher } from '../utils/unique-dispatcher';
+import { StCheckboxComponent } from './st-checkbox.component';
 
-import { StRadioGroupComponent } from './st-radio.component';
-import { StRadioComponent } from './st-radio.component';
+fdescribe('StCheckboxComponent', () => {
 
-describe('StRadioComponent', () => {
-
-   let component: StRadioComponent;
-   let fixture: ComponentFixture<StRadioComponent>;
+   let component: StCheckboxComponent;
+   let fixture: ComponentFixture<StCheckboxComponent>;
    let compiled: any;
    let de: DebugElement;
 
    beforeEach(async(() => {
       TestBed.configureTestingModule({
-         declarations: [StRadioComponent],
-         providers: [
-            SelectOneDispatcher
-         ]
+         declarations: [StCheckboxComponent]
       })
          .compileComponents();  // compile template and css
    }));
 
    beforeEach(() => {
-      fixture = TestBed.createComponent(StRadioComponent);
+      fixture = TestBed.createComponent(StCheckboxComponent);
       component = fixture.componentInstance;
       compiled = fixture.debugElement.nativeElement;
 
@@ -75,12 +69,12 @@ describe('StRadioComponent', () => {
    describe('When clicked about the component disabled', () => {
       it('Should not be checked when disabled', () => {
          component.disabled = true;
+         component.checked = false;
          compiled.querySelector('input').click();
          fixture.detectChanges();
          expect(compiled.querySelector('input').checked).toBeFalsy();
       });
    });
-
 
 
 });

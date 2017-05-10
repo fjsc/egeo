@@ -1,9 +1,25 @@
 # Changelog
 
-## 2.0.0 (upcoming)
+## 2.1.0 (upcoming)
+
+* Add st-checkbox component
+
+## 2.0.2 (May 05, 2017)
+
+* fix st-textarea borders
+
+## 2.0.1 (May 04, 2017)
+
+* fix st-textarea styles
+
+## 2.0.0 (May 04, 2017)
 
 * Update angular version to angular 4.1.0
 * Refactor of build method
+* Create textarea component
+* Create form label component
+* Create switch component
+* Bugfix #212 (St-table): Allow to introduce a model with id and label as header item
 
 ## 1.5.0 (April 25, 2017)
 

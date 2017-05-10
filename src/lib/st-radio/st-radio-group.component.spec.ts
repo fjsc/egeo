@@ -4,12 +4,7 @@ import { FormControl, FormsModule, NgControl, NgModel, ReactiveFormsModule } fro
 import { By } from '@angular/platform-browser';
 
 import { SelectOneDispatcher } from '../utils/unique-dispatcher';
-
-
-// The rule is disabled because if not fails!!!!! not remove
-import { StRadioComponent } from './st-radio.component';
-// tslint:disable-next-line:ordered-imports
-import { StRadioGroupComponent } from './st-radio-group.component';
+import { StRadioComponent, StRadioGroupComponent } from './st-radio.component';
 
 describe('StRadioGroup', () => {
 

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
 import { Routes } from '@angular/router';
 
-import { StButtonModule } from '../../st-button';
+import { StButtonModule } from '../../st-button/st-button.module';
 import { StModalModule } from '../st-modal.module';
 import { StModalService } from '../st-modal.service';
 import { ExampleComponent } from './example.component';

@@ -9,8 +9,8 @@ import { StTwoListSelectionComponent } from './st-two-list-selection.component';
 import { StTwoListSelectionViewComponent } from './st-two-list-selection.view.component';
 
 // Order modules
-import { PipesModule } from '../pipes';
-import { StSearchModule } from '../st-search';
+import { PipesModule } from '../pipes/pipes.module';
+import { StSearchModule } from '../st-search/st-search.module';
 
 @NgModule({
    imports: [CommonModule, StSearchModule, PipesModule, VirtualScrollModule],

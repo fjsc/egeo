@@ -1,0 +1,103 @@
+.st-textarea-remove-default {
+   min-width: 100%;
+}
+
+textarea {
+   vertical-align: bottom;
+   outline: none;
+   border: none;
+}
+
+.st-textarea-container ::placeholder {
+   padding-left: 3px;
+}
+
+.st-textarea-container :invalid {
+   box-shadow: none;
+}
+
+.st-textarea-container .st-textarea-remove-default {
+   position: relative;
+   bottom: 0px;
+   padding-left: 3px;
+}
+
+.st-textarea-container .st-textarea-title {
+   padding: 0;
+   position: relative;
+   margin-bottom: 7px;
+   display: block;
+   float: left;
+   width: 100%;
+}
+
+.st-textarea-container .st-textarea-normal-bar {
+   position: absolute;
+   width: 100%;
+   left: 0;
+   bottom: 18px;
+}
+
+.st-textarea-container .st-textarea-normal-bar::before,
+.st-textarea-container .st-textarea-normal-bar::after {
+   content: "";
+   height: 2px;
+   width: 0;
+   bottom: 0;
+   position: absolute;
+}
+
+.st-textarea-container .st-textarea-normal-bar::before {
+   left: 50%;
+}
+
+.st-textarea-container .st-textarea-normal-bar::after {
+   right: 50%;
+}
+
+.st-textarea-container .st-textarea-error-bar {
+   position: absolute;
+   width: 100%;
+   left: 0;
+   bottom: 18px;
+}
+
+.st-textarea-container .st-textarea-error-bar::before,
+.st-textarea-container .st-textarea-error-bar::after {
+   content: "";
+   height: 2px;
+   width: 0;
+   bottom: 0;
+   position: absolute;
+}
+
+.st-textarea-container .st-textarea-error-bar::before {
+   left: 50%;
+}
+
+.st-textarea-container .st-textarea-error-bar::after {
+   right: 50%;
+}
+
+.st-textarea-container .st-textarea-remove-default:focus~.st-textarea-bar:before,
+.st-textarea-container .st-textarea-remove-default:focus~.st-textarea-bar:after {
+   width: 50%;
+}
+
+.st-textarea {
+   min-width: 100%;
+   min-height: 100%;
+   display: inline-block;
+}
+
+.st-textarea-error-layout {
+   height: 15px;
+   position: absolute;
+   bottom: 0;
+}
+
+:host {
+   position: relative;
+   display: inline-block;
+   padding-bottom: 20px;
+}
