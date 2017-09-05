@@ -16,6 +16,16 @@ import { Component, Input } from '@angular/core';
    styleUrls: ['./st-breadcrumbs-item.component.scss']
 })
 export class StBreadcrumbItemComponent {
-   @Input() qaTag: String;
+   @Input()
+   get qaTag(): String {
+      return this._qaTag.replace(/ /g, '-');
+   }
+
+   set qaTag(qaTag: String) {
+      this._qaTag = qaTag;
+   }
+
    @Input() active: Boolean;
+
+   private _qaTag: String;
 }

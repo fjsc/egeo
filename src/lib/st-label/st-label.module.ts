@@ -10,16 +10,17 @@
  */
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
-import { StButtonModule } from '../st-button/st-button.module';
-import { StPageTitleComponent } from './st-page-title.component';
-
-import { StInputAdjustable } from '../directives/st-input-adjustable/st-input-adjustable';
+import { StLabelComponent } from './st-label.component';
+import { StTooltipModule } from '../st-tooltip/st-tooltip.module';
 
 @NgModule({
-   imports: [CommonModule, FormsModule, StButtonModule],
-   declarations: [StPageTitleComponent, StInputAdjustable],
-   exports: [StPageTitleComponent]
+   declarations: [StLabelComponent],
+   exports: [StLabelComponent],
+   imports: [
+      CommonModule,
+      StTooltipModule
+   ]
 })
-export class StPageTitleModule {}
+
+export class StLabelModule { }

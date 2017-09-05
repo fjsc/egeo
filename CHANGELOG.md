@@ -2,9 +2,36 @@
 
 ## 4.0.0 (upcoming)
 
+**Fixed bugs:**
+
+* st-breadcrumbs: Fix qaTags
+* st-dropdown: Fix qaTags
+
 **Documentation:**
 
 * Update license
+* st-checkbox: added demo
+
+**New features:**
+
+* st-label: New component based on label native tag
+
+**Fixed bugs:**
+
+* st-page-title: Fix bug when page is refreshed, the editable page title is displayed wrong
+* st-search: Send an empty search when the user presses the cross button
+
+**Breaking changes:**
+
+* st-input-adjustable: Rename directive 'StInputAdjustable' to st-input-adjustable
+
+## 3.0.1 (September 01, 2017)
+
+**Fixed bugs:**
+
+* st-tree: Fix Failed to insert St-Tree Module provider missing
+* st-tree: Fix selected from elements
+* st-tree: Fix dbblick to elements for expand
 
 ## 3.0.0 (August 18, 2017)
 

@@ -8,24 +8,19 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-.st-checkbox {
-  cursor: pointer;
+:host {
+   display: block;
+   padding: 0;
+   width: 100%;
 
-  .label {
-    padding-left: 15px;
-  }
+   .content {
+      float: left;
+   }
 
-  .custom-checkbox {
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    position: relative;
-    top: 2px;
-
-      &:before {
-        position: absolute;
-        top: -2px;
-        left: -1px;
-      }
-  }
+   st-tooltip {
+      float: left;
+      // TODO: get margin size from predefined values
+      margin-left: 10px;
+      position: relative;
+   }
 }

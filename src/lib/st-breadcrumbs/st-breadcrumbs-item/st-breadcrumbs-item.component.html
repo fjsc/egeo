@@ -10,9 +10,9 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<li class="st-breadcrumbs__item sth-breadcrumbs__item" [ngClass]="{'last': active}">
-   <span class="st-breadcrumbs__item--text sth-breadcrumbs__item--text" [attr.id]="qaTag">
+<li class="st-breadcrumbs__item sth-breadcrumbs__item" [ngClass]="{'last': active}" [attr.id]="qaTag">
+    <span class="st-breadcrumbs__item--text sth-breadcrumbs__item--text">
       <ng-content></ng-content>
    </span>
-   <span class="st-breadcrumbs__item--arrow sth-breadcrumbs__item--arrow" *ngIf="!active">></span>
+    <span class="st-breadcrumbs__item--arrow sth-breadcrumbs__item--arrow" *ngIf="!active">></span>
 </li>
