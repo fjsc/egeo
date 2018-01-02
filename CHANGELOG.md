@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.0.1 (upcoming)
+
+**Fixed bugs:**
+
+* theme: Fixed form elements styles
+
 ## 6.0.0 (December 28, 2017)
 
 **Fixed bugs:**
