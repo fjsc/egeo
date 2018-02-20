@@ -163,14 +163,14 @@ export class StTreeComponent implements OnInit, OnChanges {
       if (nodeChange && nodeChange.node && !nodeChange.node.expanded && this.collapseChildsBranch) {
          let node: StNodeTree;
          if (nodeChange.path.length > 0) {
-            node = _get<StNodeTree>(this._tree, nodeChange.path, undefined);
+            node = <StNodeTree>_get(this._tree, nodeChange.path, undefined);
          } else {
             node = this._tree;
          }
          let paths: string[] = this._resolver.getKeys(node, 'expanded', true).map(resolveKey => resolveKey.path);
          let actualNode: StNodeTree;
          paths.forEach(path => {
-            actualNode = _get<StNodeTree>(node, path);
+            actualNode = <StNodeTree>_get(node, path);
             actualNode.expanded = false;
             let fullPath: string = nodeChange.path.length === 0 ? path : `${nodeChange.path}.${path}`;
             this.toogleNode.emit({ node: actualNode, path: fullPath });
@@ -197,7 +197,7 @@ export class StTreeComponent implements OnInit, OnChanges {
          if (pathParts.length === 0) {
             return { node: tree, path: '' };
          } else if (pathParts.length > 0) {
-            return { node: _get<StNodeTree>(this._tree, pathParts.join('.'), undefined), path: pathParts.join('.') };
+            return { node: <StNodeTree>_get(this._tree, pathParts.join('.'), undefined), path: pathParts.join('.') };
          }
       }
       return undefined;

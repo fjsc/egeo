@@ -15,8 +15,11 @@ import { StCheckboxDemoModule } from './st-checkbox-demo/st-checkbox-demo.module
 import { StDropdownMenuDemoModule } from './st-dropdown-menu-demo/st-dropdown-menu-demo.module';
 import { StFileButtonDemoModule } from './st-file-button-demo/st-file-button-demo.module';
 import { StFooterDemoModule } from './st-footer-demo/st-footer-demo.module';
+import { StForegroundNotificationsDemoModule } from './st-foreground-notifications-demo/st-foreground-notifications-demo.module';
+
 import { StFormDemoModule } from './st-form-demo/st-form-demo.module';
 import { StFormListDemoModule } from './st-form-list-demo/st-form-list-demo.module';
+
 import { StFullscreenLayoutDemoModule } from './st-fullscreen-layout-demo/st-fullscreen-layout-demo.module';
 import { StHeaderDemoModule } from './st-header-demo/st-header-demo.module';
 import { StHelpDemoModule } from './st-help-demo/st-help-demo.module';
@@ -62,6 +65,7 @@ export const EGEO_DEMO_MODULES: any[] = [
    StDropdownMenuDemoModule,
    StFileButtonDemoModule,
    StFooterDemoModule,
+   StForegroundNotificationsDemoModule,
    StFormDemoModule,
    StFormListDemoModule,
    StFullscreenLayoutDemoModule,

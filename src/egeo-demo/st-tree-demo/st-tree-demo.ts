@@ -97,7 +97,7 @@ export class StTreeDemoComponent implements OnInit {
 
    onToogleNode(nodeChange: StNodeTreeChange, tree: StNodeTree): void {
       console.log('toogle node', nodeChange);
-      let node: StNodeTree = _get<StNodeTree>(tree, nodeChange.path, tree);
+      let node: StNodeTree = <StNodeTree>_get(tree, nodeChange.path, tree);
       node.expanded = nodeChange.node.expanded;
       tree = _cloneDeep(tree);
    }
@@ -106,11 +106,11 @@ export class StTreeDemoComponent implements OnInit {
       console.log('select node', nodeChange);
       let node: StNodeTree;
       if (this.selectedPath) {
-         node = _get<StNodeTree>(tree, this.selectedPath, tree);
+         node = <StNodeTree>_get(tree, this.selectedPath, tree);
          node.selected = false;
       }
       this.selectedPath = nodeChange.path;
-      node = _get<StNodeTree>(tree, nodeChange.path, tree);
+      node = <StNodeTree>_get(tree, nodeChange.path, tree);
       node.selected = true;
       tree = _cloneDeep(tree);
    }
@@ -155,7 +155,7 @@ export class StTreeDemoComponent implements OnInit {
       if (levels > 0) {
          childNodes = [];
          for (let i: number = 0; i < levelNodes; i++) {
-            // Only generate childrens for the first child
+            // Only generate children for the first child
             childNodes.push(this.generateTree(i === 0 ? levels - 1 : 0, levelNodes, `${nodeName} (${startNode}.${i})`, startNode + 1));
          }
       }

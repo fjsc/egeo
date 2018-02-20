@@ -10,13 +10,23 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
+<form #templateDrivenForm="ngForm" novalidate>
+   <st-form-list [schema]="jsonSchema" [(ngModel)]="model" name="generated" #formModel="ngModel">
+   </st-form-list>
 
-<st-form-list [schema]="jsonSchema" [(value)]="model" [(form)]="formArray" (change)="onValueChange($event)"></st-form-list>
-<br>
+   <br>
 
-<p>Form value: {{ formArray.value | json }}</p>
-<p>Form status: {{ formArray.disabled ? 'DISABLED' : formArray.valid ? 'VALID' : 'INVALID' }}</p>
-
-Model:  {{model | json}}
-<br>
-<button class="button button-primary" (click)="onChangeDisabledForm()"> DISABLE/ENABLE FORM ARRAY</button>
+   <p>Form value: {{ templateDrivenForm.value | json }}</p>
+   <p>Form status: {{ templateDrivenForm.disabled ? 'DISABLED' : templateDrivenForm.valid ? 'VALID' : 'INVALID' }}</p>
+   <br>
+   <br>
+   <br>
+   <p>Form model value: {{ formModel.value | json }}</p>
+   <p>Form model status: {{ formModel.disabled ? 'DISABLED' : formModel.valid ? 'VALID' : 'INVALID' }}</p>
+   <br>
+   <br>
+   <br>
+   Model: {{model | json}}
+   <br>
+   <button class="button button-primary" (click)="onChangeDisabledForm()"> DISABLE/ENABLE FORM ARRAY</button>
+</form>

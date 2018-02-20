@@ -1,19 +1,38 @@
-<div [formGroup]="form">
-   <div *ngFor="let control of form.controls; let i=index" class="st-form-list__row">
-      <st-form-field class="st-form-list__row-item"
-                     [formGroupName]="i"
-                     *ngFor="let property of schema.properties | stObjectToArray"
+<!--<div [formGroup]="form">-->
+<!--<div *ngFor="let control of form.controls; let i=index" class="st-form-list__row">-->
+<!--<st-form-field class="st-form-list__row-item"-->
+<!--[formGroupName]="i"-->
+<!--*ngFor="let property of schema.properties | stObjectToArray"-->
+<!--[schema]="property"-->
+<!--[formControl]="control.controls[property.key]"-->
+<!--[value]="value[i][property.key]"-->
+<!--(ngModelChange)="onModelChange($event, i, property.key)"-->
+<!--name="{{property.key}}"-->
+<!--qaTag="{{property.key  + '-' + i}}"-->
+<!--[required]="isRequired(property.key)">-->
+<!--</st-form-field>-->
+<!--<i class="icon-cross remove-button" (click)="removeItem(i)"></i>-->
+<!--</div>-->
+<!--</div>-->
+
+<form #form="ngForm" novalidate>
+   <div class="st-form-list__row" *ngFor="let row of value; let i=index">
+      <st-form-field *ngFor="let property of schema.properties | stObjectToArray" class="form-field"
                      [schema]="property"
-                     [formControl]="control.controls[property.key]"
-                     [value]="value[i][property.key]"
+                     [name]="property.key"
+                     [ngModel]="value[i][property.key]"
                      (ngModelChange)="onModelChange($event, i, property.key)"
-                     name="{{property.key}}"
-                     qaTag="{{property.key  + '-' + i}}"
-                     [required]="isRequired(property.key)">
+                     [required]="isRequired(property.key)"
+                     qaTag="{{property.key  + '-' + i}}">
       </st-form-field>
       <i class="icon-cross remove-button" (click)="removeItem(i)"></i>
+
    </div>
-</div>
-<button *ngIf="form && !form.disabled" class="button button-link-primary" (click)="addItem()">
-   <i class="icon-circle-plus"></i><span>{{buttonLabel}}</span>
-</button>
+   <button *ngIf="form && !form.disabled" class="button button-link-primary" (click)="addItem()">
+      <i class="icon-circle-plus"></i><span>{{buttonLabel}}</span>
+   </button>
+</form>
+
+<!--<div formGroupName="person">-->
+<!--<input formControlName="firstName">-->
+

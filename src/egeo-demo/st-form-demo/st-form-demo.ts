@@ -41,7 +41,7 @@ export class StFormDemoComponent {
    }
 
    showFormStatus(): void {
-      console.log(this.reactiveForm);
+      console.log(this.formModel.valid);
    }
 
    updateModel(): void {

@@ -54,6 +54,7 @@ import { StTwoListSelectionModule } from './st-two-list-selection/st-two-list-se
 import { StVerticalTabsModule } from './st-vertical-tabs/st-vertical-tabs.module';
 import { StWidgetModule } from './st-widget/st-widget.module';
 import { StFormFieldModule } from './st-form/st-form-field/st-form-field.module';
+import { StForegroundNotificationsModule } from './st-foreground-notifications/st-foreground-notifications.module';
 
 export const DECLARATIONS: any[] = [
    PipesModule,
@@ -64,6 +65,7 @@ export const DECLARATIONS: any[] = [
    StDropdownMenuModule,
    StFileButtonModule,
    StFooterModule,
+   StForegroundNotificationsModule,
    StFormDirectiveModule,
    StFormModule,
    StFormFieldModule,

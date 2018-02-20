@@ -17,7 +17,7 @@ import {
    ChangeDetectorRef,
    ViewChild
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgForm } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgForm, NG_VALIDATORS, FormControl } from '@angular/forms';
 
 @Component({
    selector: 'st-form',
@@ -25,7 +25,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgForm } from '@angular/forms'
    styleUrls: ['./st-form.component.scss'],
    changeDetection: ChangeDetectionStrategy.OnPush,
    providers: [
-      { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => StFormComponent), multi: true }
+      { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => StFormComponent), multi: true },
+      { provide: NG_VALIDATORS, useExisting: forwardRef(() => StFormComponent), multi: true }
    ]
 })
 
@@ -49,7 +50,6 @@ export class StFormComponent implements ControlValueAccessor, OnInit {
       }
    }
 
-
    // Function to call when the value changes.
    onChange(_: any): void {
       this._cd.markForCheck();
@@ -60,6 +60,13 @@ export class StFormComponent implements ControlValueAccessor, OnInit {
 
    constructor(private _cd: ChangeDetectorRef) {
    }
+
+   validate(control: FormControl, a: any): any {
+      console.log('a', a);
+console.log(this.form)
+      // return this.form.va;
+   }
+
 
    ngOnInit(): void {
       Object.keys(this.schema.properties).forEach(propertyName => {
@@ -83,7 +90,7 @@ export class StFormComponent implements ControlValueAccessor, OnInit {
 
    onChangeProperty(value: any, property: string): void {
       this._value[property] = value;
-      this.onChange(this.value);
+      this.onChange(this._value);
       this._cd.markForCheck();
    }
 

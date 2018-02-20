@@ -17,7 +17,8 @@ import { FormArray, NgForm, FormGroup } from '@angular/forms';
    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StFormListDemoComponent {
-   @ViewChild('templateForm') templateForm: NgForm;
+   @ViewChild('templateDrivenForm') public templateDrivenForm: NgForm;
+   @ViewChild('formModel') public formModel: NgForm;
 
    public jsonSchema: any = {
       '$schema': 'http://json-schema.org/schema#',
@@ -58,11 +59,11 @@ export class StFormListDemoComponent {
    }
 
    onChangeDisabledForm(): void {
-      if (this.formArray.disabled) {
-         this.formArray.enable();
+      if (this.templateDrivenForm.disabled) {
+         this.templateDrivenForm.form.enable();
 
       } else {
-         this.formArray.disable();
+         this.templateDrivenForm.form.disable();
       }
    }
 
