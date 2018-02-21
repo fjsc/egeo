@@ -10,13 +10,14 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<form #form="ngForm" novalidate>
-   <st-form-field *ngFor="let property of schema.properties | stObjectToArray" class="form-field"
-                  [schema]="property"
-                  [name]="property.key"
-                  [ngModel]="value[property.key]"
-                  (ngModelChange)="onChangeProperty($event, property.key)"
-                  [required]="isRequired(property.key)"
-                  [qaTag]="property.key">
-   </st-form-field>
+<form #form="ngForm" *ngIf="value" novalidate>
+      <st-form-field stForceValidations *ngFor="let property of schema.properties | stObjectToArray" class="form-field"
+                     [schema]="property"
+                     [name]="property.key"
+                     [ngModel]="value[property.key]"
+                     (ngModelChange)="onChangeProperty($event, property.key)"
+                     [required]="isRequired(property.key)"
+                     [qaTag]="property.key">
+      </st-form-field>
+   {{form.valid}}
 </form>

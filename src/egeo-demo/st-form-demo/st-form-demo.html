@@ -10,10 +10,8 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<form #templateDrivenForm="ngForm" novalidate>
-   <st-form [schema]="jsonSchema" [(value)]="model" >
-   </st-form>
-</form>
+   <st-form [schema]="jsonSchema" [(ngModel)]="model" name="list" #formModel="ngModel"></st-form>
+
 <br>
 
 <button class="button button-primary" (click)="showFormStatus()">
@@ -30,4 +28,4 @@
 {{model | json}}
 <br><br><br>
 <h1>VALIDATION</h1>
-{{templateDrivenForm.valid}}
+{{formModel.valid}}

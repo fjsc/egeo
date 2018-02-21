@@ -70,8 +70,10 @@ export class StFormFieldComponent implements ControlValueAccessor, OnInit {
 
    validate(control: FormControl): any {
       if (this.templateModel && this.templateModel.control && this.templateModel.control.validator) {
-         return this.templateModel.control.validator(control);
+         this.templateModel.control.setErrors(this.templateModel.control.validator(control));
       }
+
+      return this.templateModel.errors;
    }
 
    ngOnInit(): void {

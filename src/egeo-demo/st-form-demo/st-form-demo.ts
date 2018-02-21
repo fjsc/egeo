@@ -23,7 +23,7 @@ export class StFormDemoComponent {
    public model: any = {};
    public reactiveForm: FormGroup = new FormGroup({ 'genericNumberInput': new FormControl(this.model.genericNumberInput) });
    public errors: StInputError;
-
+public formControl: FormControl = new FormControl();
    @ViewChild('templateDrivenForm') public templateDrivenForm: NgForm;
    @ViewChild('formModel') public formModel: NgForm;
 
@@ -57,9 +57,9 @@ export class StFormDemoComponent {
 
    changeFormStatus(): void {
       if (this.formModel.control.enabled) {
-         this.formModel.control.disable();
+         this.templateDrivenForm.form.disable();
       } else {
-         this.formModel.control.enable();
+         this.templateDrivenForm.form.enable();
       }
    }
 }

@@ -12,12 +12,22 @@ import {
    Component,
    Input,
    OnInit,
-   ChangeDetectionStrategy,
    forwardRef,
    ChangeDetectorRef,
-   ViewChild
+   ViewChild,
+   ChangeDetectionStrategy,
+   OnChanges,
+   SimpleChanges
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgForm, NG_VALIDATORS, FormControl } from '@angular/forms';
+import {
+   ControlValueAccessor,
+   NG_VALUE_ACCESSOR,
+   NgForm,
+   NG_VALIDATORS,
+   FormControl,
+   NgModelGroup
+} from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
    selector: 'st-form',
@@ -30,12 +40,13 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgForm, NG_VALIDATORS, FormCon
    ]
 })
 
-export class StFormComponent implements ControlValueAccessor, OnInit {
+export class StFormComponent implements ControlValueAccessor, OnInit, OnChanges {
    @Input() schema: any;
    @Input() name: string;
    @ViewChild('form') form: NgForm;
 
    private _value: any = {};
+   private valueChangeSub: Subscription;
 
    @Input()
    get value(): any {
@@ -50,6 +61,7 @@ export class StFormComponent implements ControlValueAccessor, OnInit {
       }
    }
 
+
    // Function to call when the value changes.
    onChange(_: any): void {
       this._cd.markForCheck();
@@ -61,12 +73,29 @@ export class StFormComponent implements ControlValueAccessor, OnInit {
    constructor(private _cd: ChangeDetectorRef) {
    }
 
-   validate(control: FormControl, a: any): any {
-      console.log('a', a);
-console.log(this.form)
-      // return this.form.va;
+   ngOnChanges(changes: SimpleChanges): void {
+      console.log('changess!', changes)
    }
 
+   validate(control: FormControl): any {
+      console.log('validate  del form ', this.form)
+      let errors: any = null;
+      if (this.form) {
+         Object.keys(this.form.controls).forEach((propertyName) => {
+            if (this.form.controls[propertyName] && this.form.controls[propertyName].errors) {
+               if (!errors) {
+                  errors = {}
+               }
+               errors[propertyName] = this.form.controls[propertyName].errors;
+            }
+         });
+
+         this.form.control.setErrors(errors);
+         console.log(errors);
+      }
+      return errors;
+
+   }
 
    ngOnInit(): void {
       Object.keys(this.schema.properties).forEach(propertyName => {
@@ -91,6 +120,7 @@ console.log(this.form)
    onChangeProperty(value: any, property: string): void {
       this._value[property] = value;
       this.onChange(this._value);
+      this.form.form.updateValueAndValidity({ onlySelf: false, emitEvent: true });
       this._cd.markForCheck();
    }
 

@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 import { CommonModule }  from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, ChangeDetectorRef } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { StFormComponent } from './st-form.component';
@@ -19,6 +19,7 @@ import { StFormDirectiveModule } from '../directives/form/form-directives.module
 import { StFormFieldModule } from './st-form-field/st-form-field.module';
 import { StSelectModule } from '../st-select/st-select.module';
 import { StSwitchModule } from '../st-switch/st-switch.module';
+import { StFormFieldComponent } from './st-form-field/st-form-field.component';
 
 @NgModule({
    imports: [
