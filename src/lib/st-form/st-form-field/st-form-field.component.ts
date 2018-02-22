@@ -12,8 +12,10 @@ import {
    Component,
    OnInit,
    Input,
+   Output,
    forwardRef,
    ChangeDetectionStrategy,
+   EventEmitter,
    ChangeDetectorRef,
    ViewChild
 } from '@angular/core';
@@ -42,22 +44,13 @@ export class StFormFieldComponent implements ControlValueAccessor, OnInit {
    @Input() name: string;
    @ViewChild('templateModel') templateModel: NgModel;
 
-   @Input()
-   get value(): any {
-      return this._value;
-   }
 
-   set value(value: any) {
-      this._value = value;
-      this.onChange(this.value);
-      this._cd.markForCheck();
-   }
+   @Input() value: any;
+   @Output() valueChange = new EventEmitter<any>();
 
    public disabled: boolean = false; // To check disable
    public focus: boolean = false;
    public errorMessage: string = undefined;
-
-   private _value: any;
 
    constructor(private _cd: ChangeDetectorRef) {
    }
@@ -66,6 +59,11 @@ export class StFormFieldComponent implements ControlValueAccessor, OnInit {
    }
 
    onTouched = () => {
+   }
+
+   setValue(value: any) {
+      this.onChange(value);
+      this.valueChange.emit(value);
    }
 
    validate(control: FormControl): any {
@@ -77,7 +75,7 @@ export class StFormFieldComponent implements ControlValueAccessor, OnInit {
    }
 
    ngOnInit(): void {
-      if (this.schema.value.default !== undefined && this._value === undefined) {
+      if (this.schema.value.default !== undefined && this.value === undefined) {
          this.value = this.schema.value.default;
       }
       if (!this.errorMessages) {
@@ -147,9 +145,8 @@ export class StFormFieldComponent implements ControlValueAccessor, OnInit {
 
    writeValue(value: any): void {
       if (value !== undefined) {
-         this.value = value;
-         this.onChange(this.value);
-         this._cd.markForCheck();
+         this.valueChange.emit(value);
+         this.onChange(value);
       }
    }
 
