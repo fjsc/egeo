@@ -12,18 +12,12 @@
    position: relative;
 }
 
-input {
-   padding-right: 40px;
-}
-
 .arrow {
    position: absolute;
-   top: 13px;
-   right: 13px;
-
-   &.with-label {
-      top: 33px;
-   }
+   right: 8px;
+   top: 8px;
+   padding: 5px 5px 5px 9px;
+   cursor: pointer;
 }
 
 .st-select-menu {
