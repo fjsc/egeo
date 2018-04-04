@@ -15,7 +15,7 @@
 
 * st-draggable-card: Fix delay and performance
 
-## 8.8.0 (upcoming)
+## 8.8.0 (April 04, 2018)
 
 **New features:**
 
