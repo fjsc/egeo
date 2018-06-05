@@ -514,6 +514,7 @@ describe('StSelectComponent', () => {
             [errorMessage]="errorMessage"
             [selected]="selected"
             [itemsBeforeScroll]="itemsBeforeScroll"
+            [search]="search"
             class="st-form-field">
          </st-select>
       </form>
@@ -524,7 +525,7 @@ class StSelectTestReactiveComponent {
    errorMessage: string | undefined = null;
    selected: StDropDownMenuItem = null;
    options: StDropDownMenuItem[];
-
+   search: boolean = false;
    reactiveForm: FormGroup;
    model: any = { option: undefined };
    @ViewChild('select') select: StSelectComponent;
@@ -624,6 +625,10 @@ describe('StSelectComponent', () => {
          const dropdownElement = fixture.nativeElement.querySelector('.st-select-menu');
          expect(dropdownElement.getAttribute('ng-reflect-items-before-scroll')).toEqual('4');
       });
+   });
+
+   describe('Reactive form instance', () => {
+
    });
 });
 
