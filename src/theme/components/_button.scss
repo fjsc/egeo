@@ -17,7 +17,7 @@ $hover: '&:not([disabled]):hover';
 /// tipography EXTENDS (@extend %button-label-regular;):
 %button-label-regular {
    color:         $neutral-00;
-   font-family:   $egeo-nunito-sans-bold;
+   font-family:   $egeo-nunito-sans;
    font-size:     $egeo-font-size-small;
    line-height:   $egeo-line-height-small;
    &[disabled] {
@@ -26,7 +26,7 @@ $hover: '&:not([disabled]):hover';
 }
 %button-label-regular-secondary {
    color:         $action-primary-default;
-   font-family:   $egeo-nunito-sans-bold;
+   font-family:   $egeo-nunito-sans;
    font-size:     $egeo-font-size-small;
    line-height:   $egeo-line-height-small;
    &[disabled] {
@@ -35,7 +35,7 @@ $hover: '&:not([disabled]):hover';
 }
 %button-label-large {
    color:         $neutral-00;
-   font-family:   $egeo-nunito-sans-bold;
+   font-family:   $egeo-nunito-sans;
    font-size:     $egeo-font-size-medium;
    line-height:   $egeo-line-height-medium;
    &[disabled] {

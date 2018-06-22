@@ -6,6 +6,10 @@
 
 * st-fullscreen-layout: Avoid to display scroll of the previous page when fullscreen is being displayed
 
+**Others:**
+
+* egeo-theme: Changes in labels and buttons styles
+
 
 ## 11.2.0 (June 18, 2018)
 
