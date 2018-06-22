@@ -2,6 +2,11 @@
 
 ## 11.3.0 (upcoming)
 
+**New features:**
+
+* st-pop-over: Set as optional the arrow icon and header is only displayed if settings button is displayed or title is not empty
+
+
 **Fixed bugs:**
 
 * st-fullscreen-layout: Avoid to display scroll of the previous page when fullscreen is being displayed
