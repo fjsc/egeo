@@ -12,7 +12,7 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { Http } from '@angular/http';
 import { By } from '@angular/platform-browser';
-import { VirtualScrollModule } from 'angular2-virtual-scroll';
+import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 import {
    times as _times
 } from 'lodash';
@@ -58,7 +58,7 @@ function generateData(numData: number): StTwoListSelectionElement[] {
 describe('StTwoListSelectionComponent', () => {
    beforeEach(async(() => {
       TestBed.configureTestingModule({
-         imports: [StSearchModule, PipesModule, VirtualScrollModule, StCheckboxModule],
+         imports: [StSearchModule, PipesModule, VirtualScrollerModule, StCheckboxModule],
          declarations: [StTwoListSelectionViewComponent, ListSelectionComponent, ListItemComponent, ListScrollComponent],
          schemas: [NO_ERRORS_SCHEMA]
       })

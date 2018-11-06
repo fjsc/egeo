@@ -59,7 +59,7 @@ const ROLLUP_GLOBALS = {
 
    // Other dependencies
    'lodash': 'lodash',
-   'angular2-virtual-scroll': 'angular2-virtual-scroll'
+   'ngx-virtual-scroller': 'ngx-virtual-scroller'
 };
 
 export type BundleConfig = {

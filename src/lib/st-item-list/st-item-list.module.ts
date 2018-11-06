@@ -10,7 +10,7 @@
  */
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { VirtualScrollModule } from 'angular2-virtual-scroll';
+import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 
 // Components
 import { ItemListItemComponent } from './item-list-item/item-list-item.component';
@@ -21,7 +21,7 @@ import { StItemListComponent } from './st-item-list.component';
 import { StSearchModule } from '../st-search/st-search.module';
 
 @NgModule({
-   imports: [CommonModule, StSearchModule, VirtualScrollModule],
+   imports: [CommonModule, StSearchModule, VirtualScrollerModule],
    declarations: [ItemListScrollComponent, ItemListItemComponent, StItemListComponent],
    exports: [StItemListComponent]
 })

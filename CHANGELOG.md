@@ -6,7 +6,7 @@
 
 * st-tag-input: Allow to be configured to display an option list without typing anything 
 * st-tag-input: Allow to be configured to allow or avoid to type a free text
-
+* Replace deprecated dependency with ngx-virtual-scroller.
 
 ## 13.3.0 (October 30, 2018)
 

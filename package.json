@@ -37,12 +37,13 @@
    ],
    "dependencies": {
       "@angular/cli": "^6.0.7",
-      "angular2-virtual-scroll": "0.3.1",
       "lodash": "4.17.10",
+      "ngx-virtual-scroller": "^1.0.11",
       "reflect-metadata": "0.1.10",
       "tslib": "1.7.1"
    },
    "devDependencies": {
+      "@angular-devkit/build-angular": "~0.6.6",
       "@angular/animations": "6.0.3",
       "@angular/common": "6.0.3",
       "@angular/compiler": "6.0.3",
@@ -114,8 +115,7 @@
       "typescript": "2.7.2",
       "uglify-js": "2.8.22",
       "word-wrap": "1.2.3",
-      "zone.js": "0.8.26",
-      "@angular-devkit/build-angular": "~0.6.6"
+      "zone.js": "0.8.26"
    },
    "config": {
       "commitizen": {

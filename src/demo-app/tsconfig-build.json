@@ -9,7 +9,7 @@
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "declaration": false,
-      "noImplicitAny": true,
+      "noImplicitAny": false,
       "baseUrl": "./",
       "paths": {
          "@stratio/egeo": ["../lib/public_api"],

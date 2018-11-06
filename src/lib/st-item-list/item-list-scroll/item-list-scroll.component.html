@@ -10,6 +10,6 @@
     SPDX-License-Identifier: Apache-2.0.
 
 -->
-<virtual-scroll [items]="list" (update)="scrollItems = $event">
+<virtual-scroller [items]="list" (vsUpdate)="scrollItems = $event">
    <item-list-item *ngFor="let item of scrollItems" [item]="item" [qaTag]="listQaTag" [align]="align" (selectItem)="selectItem.emit(item)"></item-list-item>
-</virtual-scroll>
+</virtual-scroller>
