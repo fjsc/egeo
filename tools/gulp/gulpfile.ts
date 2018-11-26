@@ -8,18 +8,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
-import { createPackageBuildTasks } from 'build-tools';
 
-// Create gulp tasks to build the different packages in the project.
-createPackageBuildTasks('egeo');
-createPackageBuildTasks('egeo-demo', ['egeo']);
-
-import './tasks/aot';
-import './tasks/clean';
-import './tasks/default';
-import './tasks/egeo-publish';
+import './tasks/build';
 import './tasks/generate-theme';
-import './tasks/lint';
-import './tasks/others';
-import './tasks/payload';
-import './tasks/validate-release';
+

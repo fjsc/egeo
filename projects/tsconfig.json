@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "egeo": [
+        "dist/egeo"
+      ],
+      "egeo/*": [
+        "dist/egeo/*"
+      ],
+      "@app/shared/*": [
+        "./projects/egeo-demo/src/app/shared/*"
+      ],
+      "@app/demos/*": ["./projects/egeo-demo/src/app/demos/*"],
+      "@stratio/egeo": ["./projects/egeo/src/public_api.ts"],
+      "@stratio/egeo-elements": ["./projects/egeo/src/public_api.elements.ts"]
+    }
+  }
+}

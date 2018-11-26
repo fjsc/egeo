@@ -25,7 +25,7 @@ const gridSourceFile = join(themeSourceFolder, 'grid', 'grid.scss');
 const sanitizeSourceFile = join(themeSourceFolder, 'vendors', 'sanitize.scss');
 const constantsSourceFile = join(themeSourceFolder, 'constants', '_index.scss');
 
-const packageOut = join(outputDir, 'releases', 'egeo', 'theme');
+const packageOut = join(outputDir, 'egeo', 'theme');
 const constantsOutputFile = 'constants.scss';
 const themeScssOutputFile = 'egeo-theme-stratio.scss';
 

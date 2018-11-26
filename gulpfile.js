@@ -8,6 +8,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
+
 'use strict';
 
 const path = require('path');
@@ -29,3 +30,4 @@ require("tsconfig-paths").register({
 });
 
 require('./tools/gulp/gulpfile');
+

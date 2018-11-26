@@ -116,7 +116,21 @@
          "allow-leading-underscore",
          "ban-keywords"
       ],
-      "ban": [true, ["fit"], ["fdescribe"], ["xit"], ["xdescribe"]],
+      "ban": [
+         true,
+         [
+            "fit"
+         ],
+         [
+            "fdescribe"
+         ],
+         [
+            "xit"
+         ],
+         [
+            "xdescribe"
+         ]
+      ],
       "whitespace": [
          true,
          "check-branch",

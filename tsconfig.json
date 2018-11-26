@@ -1,31 +1,27 @@
-// TypeScript config file that matches all source files in the project. This file is read by
-// IDEs and TSLint. For IDEs it ensures that `experimentalDecorator` warnings are not showing up.
 {
-   "compilerOptions": {
-      "rootDir": ".",
-      "experimentalDecorators": true,
-      "module": "es2015",
-      "moduleResolution": "node",
-      "noUnusedParameters": true,
-      "strictNullChecks": true,
-      "skipLibCheck": true,
-      "outDir": "./dist/packages/all",
-      "target": "es2015",
-      "lib": ["es5", "es2015", "dom"],
-      "types": ["jasmine"],
-      "baseUrl": ".",
-      "paths": {
-         "@stratio/egeo": ["./src/lib/public_api.ts"],
-         "@stratio/egeo-demo": ["./src/egeo-demo/public_api.ts"]
-      }
-   },
-   "include": [
-      "src/**/*.ts",
-      "tools/**.ts"
-   ],
-   "exclude": [
-      // IDEs should not type-check the different node_modules directories of the different packages.
-      // This would cause the IDEs to be slower and also linters would check the node_modules.
-      "**/node_modules"
-   ]
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@app/shared/*": ["./projects/egeo-demo/src/app/shared/*"],
+      "@app/demos/*": ["./projects/egeo-demo/src/app/demos/*"],
+      "@stratio/egeo": ["./projects/egeo/src/public_api.ts"],
+      "@stratio/egeo-elements": ["./projects/egeo/src/public_api.elements.ts"]
+    }
+  }
 }

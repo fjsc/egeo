@@ -1,0 +1,99 @@
+@import 'constants/index';
+
+.home {
+   padding-bottom: 100px;
+
+   .background {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(to right,rgba(142,45,226,0.95),rgba(74,0,224,0.95),rgba(35,13,201,0.95)), url(/assets/images/bg.png);
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+   }
+
+   .title-container {
+     position: absolute;
+     top: 50%;
+     margin-top: -140px;
+   }
+
+   h1 {
+      font-family: $egeo-nunito-sans-semiBold;
+      font-size: 53px;
+      text-align: left;
+      color: $neutral-00;
+      margin-bottom: 10px;
+      font-weight: 100;
+   }
+
+   h5 {
+      font-family: $egeo-nunito-sans-light;
+      text-align: left;
+      font-weight: 100;
+      font-size: 32px;
+      color: $neutral-00;
+      margin-bottom: 58px;
+   }
+
+   .main-text {
+      margin: 77px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      max-width: 892px;
+      font-weight: 100;
+      font-family: $egeo-nunito-sans-light;
+      font-size: $egeo-font-size-large;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: center;
+      color: #4b4b4b;
+
+      p {
+         margin-bottom: 25px;
+      }
+
+   }
+
+   .footer-text {
+      margin-top: 14px;
+      font-family: $egeo-nunito-sans-bold;
+      font-size: $egeo-font-size-small;
+      color: $action-secondary-07;
+      padding: 40px 0 35px;
+   }
+
+   .github-button {
+      background-color: #029ee3;
+      font-family: $egeo-nunito-sans;
+      font-size: $egeo-font-size-medium;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: $neutral-00;
+      cursor: pointer;
+      font-weight: 100;
+      padding: 11px 26px;
+      border-radius: 4px;
+      margin: auto;
+      &:hover {
+         background-color: darken(#029ee3, 5%);
+      }
+      i {
+         padding-right: 18px;
+         font-size: $egeo-line-height-xxxlarge;
+         vertical-align: bottom;
+      }
+      span {
+         display: inline-block;
+         line-height: 1.8em;
+      }
+
+   }
+}

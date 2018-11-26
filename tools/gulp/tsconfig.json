@@ -12,7 +12,7 @@
       "target": "es5",
       "baseUrl": ".",
       "paths": {
-         "build-tools": ["../package-tools/index"]
+         "build-tools": ["package-tools/index"]
       },
       "types": [
          "node"
