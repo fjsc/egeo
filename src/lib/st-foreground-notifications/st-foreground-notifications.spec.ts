@@ -242,5 +242,18 @@ describe('StForegroundNotificationsComponent', () => {
 
          expect(nativeElement.querySelectorAll('.foreground-notification__content > span')[0].textContent).toEqual(' notification one ');
       }));
+
+      it(`when a notification is removed, if currentNotification page is greater than the current number of notifications,
+         this is setted to show the last one`, () => {
+         comp.notifications = comp.generatePaginationNotification();
+         fixture.detectChanges();
+         let incrementButton: HTMLElement = fixture.debugElement.query(By.css('.increment-notification')).nativeElement;
+         incrementButton.click();
+         fixture.detectChanges();
+         // remove the last notification
+         comp.notifications = comp.notifications.slice(0, -1);
+         fixture.detectChanges();
+         expect(nativeElement.querySelectorAll('.foreground-notification__content > span')[0].textContent).toEqual(' notification one ');
+      });
    });
 });
