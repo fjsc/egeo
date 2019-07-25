@@ -12,6 +12,7 @@
 
 * st-table: Fix error with selectableAll and sortable columns
 * st-foreground-notifications: Fix selected current notification
+* st-header: Fixed current active item
 
 **Breaking changes:**
 

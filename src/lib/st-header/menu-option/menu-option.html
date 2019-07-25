@@ -12,7 +12,7 @@
 -->
 
 <st-dropdown-menu [items]="submenuList" (change)="changeOption($event)" [active]="isActive && hasSubmenu" [placement]="'bottom-start'" [offset]="{x: 0, y: 5}">
-   <div class="sth-header-menu-option" [attr.id]="qaId" [ngClass]="{active: isRouteActive}" #menu (click)="onMenuClick()">
+   <div class="sth-header-menu-option" [attr.id]="qaId" [ngClass]="{active: isRouteActive()}" #menu (click)="onMenuClick()">
       <a class="sth-header-menu-option-name">
          <i [ngClass]="option.icon" class="sth-header-menu-option-icon" [title]="option.label"></i>
          <div *ngIf="showMenuName" class="sth-header-menu-option-label">{{option.label}}</div>

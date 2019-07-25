@@ -204,19 +204,19 @@ describe('StHeader', () => {
 
          fixture.detectChanges();
          expect(comp.submenuList).toEqual(expectedSubmenuList);
-         expect(comp.isRouteActive).toBeFalsy();
+         expect(comp.isRouteActive()).toBeFalsy();
 
          router.launchNewEvent(new NavigationStart(0, 'submenu1'));
          fixture.detectChanges();
          expect(comp.submenuList).toEqual(expectedSubmenuList);
-         expect(comp.isRouteActive).toBeFalsy();
+         expect(comp.isRouteActive()).toBeFalsy();
 
          router.launchNewEvent(new NavigationEnd(0, 'submenu1', 'submenu1'));
          router.url = 'fakePath/submenu1';
          fixture.detectChanges();
          expectedSubmenuList[0].selected = true;
          expect(comp.submenuList).toEqual(expectedSubmenuList);
-         expect(comp.isRouteActive).toBeTruthy();
+         expect(comp.isRouteActive()).toBeTruthy();
       }));
 
       it('should be destroyed without subscription', inject([Router], (router: RouterStub) => {

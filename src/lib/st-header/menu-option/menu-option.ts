@@ -17,7 +17,8 @@ import {
    Output,
    EventEmitter,
    HostListener,
-   ViewChild
+   ViewChild,
+   ChangeDetectorRef
 } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -42,7 +43,7 @@ export class StHeaderMenuOptionComponent implements OnDestroy {
    private subscription: Subscription;
    private actualPath: string = '';
 
-   constructor(private elementRef: ElementRef, private router: Router) {
+   constructor(private elementRef: ElementRef, private router: Router, private cd: ChangeDetectorRef) {
       this.subscription = this.router.events.subscribe((event) => this.onRouterEvent(event));
       this.actualPath = this.router.url;
    }
@@ -70,7 +71,7 @@ export class StHeaderMenuOptionComponent implements OnDestroy {
       })) : [];
    }
 
-   public get isRouteActive(): boolean {
+   public isRouteActive(): boolean {
       return this.router.url.indexOf(this.option.link) > -1;
    }
 
@@ -107,6 +108,7 @@ export class StHeaderMenuOptionComponent implements OnDestroy {
    private onRouterEvent(event: any): void {
       if (event instanceof NavigationEnd) {
          this.actualPath = event.urlAfterRedirects;
+         this.cd.markForCheck();
       }
    }
 }
