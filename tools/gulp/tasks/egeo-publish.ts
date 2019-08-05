@@ -27,7 +27,7 @@ export const releasePackages = [
 const argv = minimist(process.argv.slice(3));
 
 /** Task that builds all releases that will be published. */
-task(':publish:build-releases', execTask('./node/npm', ['build']));
+task(':publish:build-releases', execTask('./node/npm', ['run-script', 'build']));
 
 /** Make sure we're logged in. */
 task(':publish:whoami', execTask('./node/npm', ['whoami'], {
