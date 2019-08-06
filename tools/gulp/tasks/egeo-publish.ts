@@ -36,7 +36,7 @@ task(':publish:whoami', execTask('./node/npm', ['whoami'], {
 }));
 
 function _execNpmPublish(label: string, packageName: string): Promise<{}> | undefined {
-   const packageDir = join(buildConfig.outputDir, 'releases', packageName);
+   const packageDir = join(buildConfig.outputDir, packageName);
 
    if (!statSync(packageDir).isDirectory()) {
       return;
