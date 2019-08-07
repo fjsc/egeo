@@ -15,6 +15,8 @@ import { existsSync } from 'fs';
 const BUILD_CONFIG_FILENAME = 'build-config.js';
 
 export interface BuildConfig {
+   /** Current version of the project. */
+   projectVersion: string;
    /** Path to the root of the project. */
    projectDir: string;
    /** Path to the directory where all packages are living. */

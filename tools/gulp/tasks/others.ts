@@ -13,7 +13,6 @@ import { mkdirpSync } from 'fs-extra';
 import { readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
-const strip = require('gulp-strip-comments');
 const gulp = require('gulp');
 
 import { buildConfig, sequenceTask } from 'build-tools';

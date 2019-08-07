@@ -16,6 +16,7 @@ import { execTask } from '../util/task_helpers';
 import { buildConfig, sequenceTask } from 'build-tools';
 import { yellow, green, red, grey } from 'chalk';
 import * as minimist from 'minimist';
+import { composeRelease } from '../package-tools/build-release';
 
 /** Packages that will be published to NPM by the release task. */
 export const releasePackages = [
@@ -28,6 +29,10 @@ const argv = minimist(process.argv.slice(3));
 
 /** Task that builds all releases that will be published. */
 task(':publish:build-releases', execTask('./node/npm', ['run-script', 'build']));
+
+task(':publish:compose', () => {
+   releasePackages.map(name => composeRelease(name));
+});
 
 /** Make sure we're logged in. */
 task(':publish:whoami', execTask('./node/npm', ['whoami'], {
@@ -113,5 +118,6 @@ task(':publish', async () => {
 task('publish', sequenceTask(
    ':publish:whoami',
    ':publish:build-releases',
+   ':publish:compose',
    ':publish'
 ));
