@@ -59,6 +59,7 @@
              "tsConfig": "projects/egeo-demo/tsconfig.app.json",
              "assets": [
                "projects/egeo-demo/src/favicon.ico",
+               "projects/egeo-demo/src/package.json",
                "projects/egeo-demo/src/assets",
                {
                  "glob": "**/*.*",
