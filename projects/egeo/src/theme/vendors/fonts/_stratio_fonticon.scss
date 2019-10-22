@@ -53,6 +53,7 @@
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }
+
 i {
    /* use !important to prevent issues with browser extensions that change fonts */
    font-family: 'ico_stratio' !important;
@@ -68,9 +69,6 @@ i {
    -moz-osx-font-smoothing: grayscale;
 }
 
- .icon-arangodb:before {
-   content: "\e9d6";
- }
  .icon-dashboards:before {
    content: "\e9d0";
  }
@@ -89,8 +87,8 @@ i {
  .icon-instant:before {
    content: "\e9d5";
  }
- .icon-integrity:before {
-   content: "\e9cb";
+ .icon-pivot:before {
+   content: "\e9e2";
  }
  .icon-insert-literal:before {
    content: "\e9cc";
@@ -103,15 +101,6 @@ i {
  }
  .icon-mask:before {
    content: "\e9cf";
- }
- .icon-square-chevron-down:before {
-   content: "\e9be";
- }
- .icon-square-check:before {
-   content: "\e9bf";
- }
- .icon-square-check-minus:before {
-   content: "\e9d8";
  }
  .icon-radio-checked:before {
    content: "\e9c0";
@@ -242,11 +231,11 @@ i {
  .icon-move-to-folder:before {
    content: "\e9b0";
  }
+ .icon-folder-executions:before {
+   content: "\e9de";
+ }
  .icon-file:before {
    content: "\e124";
- }
- .icon-structured-data:before {
-   content: "\e9c3";
  }
  .icon-filesystem:before {
    content: "\e95e";
@@ -266,8 +255,20 @@ i {
  .icon-csv2:before {
    content: "\e647";
  }
+ .icon-Excel:before {
+   content: "\e963";
+ }
  .icon-print:before {
    content: "\e64a";
+ }
+ .icon-dictionary:before {
+   content: "\e9c3";
+ }
+ .icon-structured-data:before {
+   content: "\e9dc";
+ }
+ .icon-catalog:before {
+   content: "\e9e3";
  }
  .icon-file-add:before {
    content: "\e125";
@@ -383,6 +384,15 @@ i {
  .icon-square-cross:before {
    content: "\e047";
  }
+ .icon-square-chevron-down:before {
+   content: "\e9be";
+ }
+ .icon-square-check:before {
+   content: "\e9bf";
+ }
+ .icon-square-check-minus:before {
+   content: "\e9d8";
+ }
  .icon-check2:before {
    content: "\e64c";
  }
@@ -401,6 +411,9 @@ i {
  .icon-percent:before {
    content: "\e92b";
  }
+ .icon-sql:before {
+   content: "\e9e4";
+ }
  .icon-init-nulls:before {
    content: "\e919";
  }
@@ -413,8 +426,17 @@ i {
  .icon-if:before {
    content: "\e9c5";
  }
+ .icon-case:before {
+   content: "\e9e1";
+ }
+ .icon-formatter:before {
+   content: "\e9dd";
+ }
  .icon-comma-delimiter:before {
    content: "\e9c6";
+ }
+ .icon-integrity:before {
+   content: "\e9cb";
  }
  .icon-sql-builder:before {
    content: "\e932";
@@ -758,9 +780,6 @@ i {
  .icon-dot_selected:before {
    content: "\e632";
  }
- .icon-stratio_imagotipo:before {
-   content: "\e963";
- }
  .icon-stratio_small:before {
    content: "\e633";
  }
@@ -1103,6 +1122,9 @@ i {
  .icon-key:before {
    content: "\e984";
  }
+ .icon-arangodb:before {
+   content: "\e9d6";
+ }
  .icon-mongodb:before {
    content: "\e623";
  }
@@ -1181,6 +1203,9 @@ i {
  .icon-postgres:before {
    content: "\e9a5";
  }
+ .icon-postgres-xl:before {
+   content: "\e9df";
+ }
  .icon-elasticsearch:before {
    content: "\e624";
  }
@@ -1189,6 +1214,9 @@ i {
  }
  .icon-codepen:before {
    content: "\e90f";
+ }
+ .icon-ignite:before {
+   content: "\e9e0";
  }
  .icon-docker:before {
    content: "\e968";
