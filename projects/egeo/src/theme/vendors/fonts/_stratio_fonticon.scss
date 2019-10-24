@@ -69,6 +69,22 @@ i {
    -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-auto-ml:before {
+   content: "\e9e6";
+ }
+ .icon-Ml-trainer:before {
+   content: "\e9e7";
+ }
+ .icon-ml-model:before {
+   content: "\e9e8";
+ }
+ .icon-streaming1:before {
+   content: "\e9e9";
+ }
+ .icon-batch:before {
+   content: "\e9ea";
+ }
  .icon-dashboards:before {
    content: "\e9d0";
  }
@@ -386,6 +402,9 @@ i {
  }
  .icon-square-chevron-down:before {
    content: "\e9be";
+ }
+ .icon-square-unchecked:before {
+   content: "\e9e5";
  }
  .icon-square-check:before {
    content: "\e9bf";

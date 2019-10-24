@@ -9,7 +9,7 @@
 **New features:**
 
 * st-fullscreen-layout: Allow to display it on full width
-* Update icon font to 1.21
+* Update icon font to 1.22
 
 ## 17.1.0 (October 18, 2019)
 
