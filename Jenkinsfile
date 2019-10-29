@@ -12,7 +12,7 @@ hose {
     DEV = { config ->
 
         doCompile(config)
-        doUT(config)
+        doUT(conf:config, agent: "ubuntu-base-ssh-1604-puppeteer")
         doPackage(config)
 
         parallel(QC: {
