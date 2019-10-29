@@ -8,6 +8,7 @@ hose {
     REPOSITORY = 'github.com/egeo'
     LANG = 'typescript'
     FOSS = true
+    FORCE_AGENT = true
 
     DEV = { config ->
 
