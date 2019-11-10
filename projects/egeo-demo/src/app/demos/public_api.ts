@@ -32,6 +32,7 @@ export { StInputDemoModule } from './st-input-demo/st-input-demo.module';
 export { StItemListDemoModule } from './st-item-list-demo/st-item-list-demo.module';
 export { StLabelDemoModule } from './st-label-demo/index';
 export { StLauncherDemoModule } from './st-launcher-demo/st-launcher-demo.module';
+export { StMenuDemoModule } from './st-menu-demo/st-menu-demo.module';
 export { StModalDemoModule } from './st-modal-demo/st-modal-demo.module';
 export { StPageTitleDemoModule } from './st-page-title-demo/st-page-title-demo.module';
 export { StPaginationDemoModule } from './st-pagination-demo/st-pagination-demo.module';

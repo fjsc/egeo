@@ -7,6 +7,9 @@
 * Update icon font to 1.24
 
 
+**New features:**
+
+* st-menu: Create component 
 
 ## 17.2.0 (October 25, 2019)
 

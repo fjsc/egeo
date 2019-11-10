@@ -28,6 +28,7 @@ import { StInfoBoxModule } from './st-info-box/st-info-box.module';
 import { StInputModule } from './st-input/st-input.module';
 import { StItemListModule } from './st-item-list/st-item-list.module';
 import { StLabelModule } from './st-label/index';
+import { StMenuModule } from './st-menu/st-menu.module';
 import { StLauncherModule } from './st-launcher/st-launcher.module';
 import { StModalModule } from './st-modal/st-modal.module';
 import { StModal2Module } from './st-modal2/st-modal2.module';

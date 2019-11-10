@@ -29,7 +29,7 @@ export class MenuComponent implements OnInit {
    ngOnInit(): void {
       const currentURL = this._router.url.split('/');
       const currentDemo = currentURL[currentURL.length - 1];
-      const currentPosition = this.options.findIndex((_) => _.url.indexOf(currentDemo) !== -1);
+      const currentPosition = this.options.findIndex((_) => _.url.indexOf('/' + currentDemo) !== -1);
       if (currentPosition > -1) {
          this.selected.emit(currentPosition);
       }

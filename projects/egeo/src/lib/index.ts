@@ -158,6 +158,13 @@ export {
    StLauncherGroupSchema
 } from './st-launcher/st-launcher.model';
 
+// Menu
+export { StMenuModule } from './st-menu/st-menu.module';
+export {
+   StMenuModel,
+   StMenuStatus
+} from './st-menu/st-menu.model';
+
 // Modal
 export {
    StModalButton,

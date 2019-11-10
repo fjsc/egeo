@@ -29,6 +29,7 @@ import { StInputDemoModule } from './st-input-demo/st-input-demo.module';
 import { StItemListDemoModule } from './st-item-list-demo/st-item-list-demo.module';
 import { StLabelDemoModule } from './st-label-demo/st-label-demo.module';
 import { StLauncherDemoModule } from './st-launcher-demo/st-launcher-demo.module';
+import { StMenuDemoModule } from './st-menu-demo/st-menu-demo.module';
 import { StModalDemoModule } from './st-modal-demo/st-modal-demo.module';
 import { StModal2DemoModule } from './st-modal2-demo/st-modal2-demo.module';
 import { StPageTitleDemoModule } from './st-page-title-demo/st-page-title-demo.module';
@@ -80,6 +81,7 @@ export const EGEO_DEMO_MODULES: any[] = [
    StItemListDemoModule,
    StLabelDemoModule,
    StLauncherDemoModule,
+   StMenuDemoModule,
    StModalDemoModule,
    StModal2DemoModule,
    StPageTitleDemoModule,
