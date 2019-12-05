@@ -19,16 +19,12 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    position: fixed;
-    top: 60px;
-    left: 0;
     background-color: $neutral-00;
     width: 100%;
-    padding-top: 20px;
-    margin-left: 352px;
 
     .header-container {
        display: flex;
+       width: 100%;
        flex-wrap: nowrap;
        align-items: center;
     }
@@ -100,6 +96,5 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 150px;
     margin-left: 22px;
  }

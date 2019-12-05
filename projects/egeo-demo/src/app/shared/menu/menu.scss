@@ -11,18 +11,18 @@
 @import 'constants/index';
 
 :host {
-   height: 100%;
+   width: 280px;
    display: flex;
+   height: calc(100vh - 60px);
+   top: 60px;
+   left: 0;
 }
 
 .side-menu {
-   width: 280px;
-   height: calc(100vh - 60px);
+   height: 100%;
+   width: 100%;
    overflow-y: hidden;
-   position: fixed;
    z-index: $header-z-index;
-   top: 60px;
-   left: 0;
    background-color: $neutral-02;
 
    &:hover {

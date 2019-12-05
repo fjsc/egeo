@@ -13,25 +13,20 @@ import {
    Component,
    ComponentFactoryResolver,
    ComponentRef,
-   Input,
    OnDestroy,
    AfterViewInit,
    ViewChild,
    ViewContainerRef,
    Type
 } from '@angular/core';
-import * as ReflectMetadata from 'reflect-metadata';
 
 import { DemoGeneratorProviders } from './demo-generator.interface';
-
-import { StDemoGeneratorModule } from './demo-generator.module';
 
 @Component({
    selector: 'st-demo-body',
    template: '<div #stDemoBody></div>',
    styles: [`
       :host {
-         height: 100%;
          width: 100%;
          display: block;
       }
