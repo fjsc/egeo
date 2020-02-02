@@ -321,7 +321,7 @@ describe('StFormComponent', () => {
          });
 
          it('link button is displayed and all its properties are hidden', () => {
-            expect(fixture.nativeElement.querySelector('button.button-link-primary')).not.toBeNull();
+            expect(fixture.nativeElement.querySelector('button.button-link')).not.toBeNull();
             expect(getParentElement(fixture.nativeElement.querySelector('#name'), 3).classList).toContain('hidden'); // form field element
             expect(getParentElement(fixture.nativeElement.querySelector('#age'), 3).classList).toContain('hidden'); // form field element
             expect(fixture.nativeElement.querySelector('#subsection-section').hidden).toBeTruthy();

@@ -15,7 +15,7 @@
 <st-fullscreen-layout [fullWidth]="true">
     <p class="st-fullscreen-layout-title">Edition</p>
     <div class="st-fullscreen-layout-buttons">
-        <button class="button button-secondary-line button-separator"
+        <button class="button button-secondary button-separator"
               (click)="onClickHideButton()">Cancel</button>
         <button class="button button-primary"
               (click)="onClickHideButton()">Save</button>

@@ -37,7 +37,7 @@ export class StModalDemoComponent implements AfterViewInit {
    };
 
    private buttons: StModalButton[] = [
-      { label: 'Cancel', classes: 'button-secondary-line', responseValue: StModalResponse.NO, closeOnClick: true },
+      { label: 'Cancel', classes: 'button-secondary', responseValue: StModalResponse.NO, closeOnClick: true },
       { label: 'Confirm', classes: 'button-primary', responseValue: StModalResponse.YES, closeOnClick: true }
    ];
 

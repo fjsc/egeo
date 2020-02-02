@@ -8,32 +8,41 @@
  *
  * SPDX-License-Identifier: Apache-2.0.
  */
+
 h1 {
-   font-family: 'Nunito Sans Bold';
+   font-family: 'Nunito Sans';
    font-size: 20px;
-   margin-bottom: 20px;
    padding: 0;
    line-height: 25px;
-   font-weight: lighter;
+   font-weight: bold;
 }
+
 p {
    font-family: 'Nunito Sans';
    margin: 0;
    padding: 0
 }
+
+.button-example {
+   margin-top: 20px;
+}
+
 .temp1 {
    font-family: 'Nunito Sans';
    color:#aaa;
-   font-size: 12px;
+   font-size: 14px;
    line-height: 12px;
+   margin-top: 4px;
    display: block;
    margin-bottom: 5px;
 }
+
 .temp2 {
    font-family: 'Nunito Sans';
    background-color: #f1f1f1;
    padding: 10px 0;
 }
+
 .separator {
    display:block;
    margin:10px;

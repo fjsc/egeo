@@ -20,7 +20,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
    template: `
       <st-fullscreen-layout [title]="'Edition'">
          <div class="st-fullscreen-layout-buttons">
-            <button class="button button-secondary-line button-separator" (click)="close.emit($event)">Cancel</button>
+            <button class="button button-secondary button-separator" (click)="close.emit($event)">Cancel</button>
             <button class="button button-primary" (click)="close.emit($event)">Save</button>
          </div>
          <div class="st-fullscreen-layout-content">

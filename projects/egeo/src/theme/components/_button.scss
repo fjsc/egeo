@@ -11,60 +11,32 @@
  @import '../constants/colors';
  @import '../constants/fonts';
 
-/// VARS:
-$hover: '&:not([disabled]):hover';
-
-%button-label-small {
-   color:         $neutral-full;
-   font-family:   $egeo-nunito-sans;
-   font-weight:   600;
-   font-size:     $egeo-font-size-14;
-   line-height:   $egeo-line-height-18;
-   height:        25px;
-   &[disabled] {
-      color:      $neutral-20;
-      cursor:     not-allowed;
-
-   }
-}
-%button-label-small-secondary {
-   color:         $action;
-   font-family:   $egeo-nunito-sans;
-   font-weight:   600;
-   font-size:     $egeo-font-size-14;
-   line-height:   $egeo-line-height-18;
-   height:        25px;
-}
 /// tipography EXTENDS (@extend %button-label-regular;):
 %button-label-regular {
    color:         $neutral-full;
    font-family:   $egeo-nunito-sans;
    font-weight:   600;
-   font-size:     $egeo-font-size-16;
-   line-height:   $egeo-line-height-small;
+   font-size:     $egeo-font-size-14;
+   line-height:   $egeo-line-height-18;
    height:        40px;
    &[disabled] {
-      color:      $neutral-20;
       cursor:     not-allowed;
    }
 }
-%button-label-regular-secondary {
-   color:         $action;
+
+%button-label-small {
    font-family:   $egeo-nunito-sans;
    font-weight:   600;
-   font-size:     $egeo-font-size-16;
-   line-height:   $egeo-line-height-small;
-   height:        40px;
-   &[disabled] {
-      color:      $neutral-20;
-      cursor:     not-allowed;
-   }
+   font-size:     $egeo-font-size-14;
+   line-height:   $egeo-line-height-18;
+   height:        25px;
 }
+
 %button-label-large {
    color:         $neutral-full;
    font-family:   $egeo-nunito-sans;
    font-weight:   600;
-   font-size:     $egeo-font-size-18;
+   font-size:     $egeo-font-size-16;
    line-height:   $egeo-line-height-22;
    height:        50px;
    &[disabled] {
@@ -72,59 +44,41 @@ $hover: '&:not([disabled]):hover';
       cursor:     not-allowed;
    }
 }
-%button-label-large-secondary {
-   color:         $action;
-   font-family:   $egeo-nunito-sans;
-   font-weight:   600;
-   font-size:     $egeo-font-size-18;
-   line-height:   $egeo-line-height-22;
-   height:        50px;
-}
+
 %button-toolbar-ico-default {
    color:         $neutral-60;
    font-family:   $egeo-stratio-icons;
-   font-size:     $egeo-font-size-18;
+   font-size:     $egeo-font-size-16;
    line-height:   $egeo-line-height-22;
    &[disabled] {
       color:      $neutral-20;
       cursor:     not-allowed;
    }
 }
-.button-link-primary {
+
+.button-link {
    color:         $action;
    font-family:   $egeo-nunito-sans;
    font-weight:   normal;
-   font-size:     $egeo-font-size-16;
-   line-height:   $egeo-line-height-small;
+   font-size:     $egeo-font-size-14;
+   line-height:   $egeo-line-height-20;
+   cursor:        pointer;
+
+   &:hover {
+      color: $action-120;
+   }
+
+   :active {
+      color: $action-150;
+   }
+
    &[disabled] {
       opacity:    0.4;
       cursor:     not-allowed;
    }
-   &:not([disabled]):hover {
-      color:      $action-120;
-   }
 
    &.small {
-      font-size:     $egeo-font-size-14;
-      line-height:   $egeo-line-height-18;
-   }
-}
-.button-link-secondary {
-   color:         $neutral-50;
-   font-family:   $egeo-nunito-sans;
-   font-weight:   normal;
-   font-size:     $egeo-font-size-16;
-   line-height:   $egeo-line-height-small;
-   text-decoration: underline;
-   &[disabled] {
-      color:      $neutral-20;
-      cursor:     not-allowed;
-   }
-   &:not([disabled]):hover {
-      color:      $neutral-60;
-   }
-   &.small {
-      font-size:     $egeo-font-size-14;
+      font-size:     $egeo-font-size-12;
       line-height:   $egeo-line-height-18;
    }
 }
@@ -141,23 +95,14 @@ $hover: '&:not([disabled]):hover';
       vertical-align: middle;
    }
 
-   #{$hover} {
-      cursor: pointer;
-   }
-
    &.button-primary,
-   &.button-secondary-line,
-   &.button-secondary-gray,
-   &.button-critical,
-   &.button-warning,
-   &.button-success {
+   &.button-secondary,
+   &.button-borderless,
+   &.button-critical {
       @extend %button-label-regular;
-      padding:0.625rem 1.875rem;
+      padding:0.857rem 1.875rem;
       text-overflow: ellipsis;
-
-      &[disabled] {
-         background-color: $neutral-14;
-      }
+      cursor: pointer;
 
       &.block {
          width:100%;
@@ -180,26 +125,33 @@ $hover: '&:not([disabled]):hover';
    &.button-primary {
       background-color: $action;
 
-      #{$hover} {
+      &:hover {
          background-color: $action-120;
+      }
+
+      &:active {
+         background-color: $action-150;
+      }
+
+      &[disabled] {
+         background-color: $action-10;
+         color: $action-60;
       }
    }
 
-   &.button-secondary-line {
-      @extend %button-label-regular-secondary;
+   &.button-secondary {
       background-color: $neutral-full;
       border: solid $action 1px;
-      padding: .625rem 1.8125rem;
       color: $action;
 
-      #{$hover} {
+      &:hover {
          color: $action-120;
          border-color: $action-120;
       }
 
       &[disabled] {
-         background-color: $neutral-full;
-         border-color: $neutral-20;
+         color: $action-60;
+         border-color: $action-40;
       }
 
       &.large {
@@ -212,35 +164,41 @@ $hover: '&:not([disabled]):hover';
       }
    }
 
-   &.button-secondary-gray {
-      background-color: $space-30;
-
-      #{$hover} {
-         background-color: $space-50;
-      }
-   }
-
    &.button-critical {
       background-color: $error;
 
-      #{$hover} {
+      &:hover {
          background-color: $error-120;
       }
-   }
 
-   &.button-warning {
-      background-color: $status-warning-default;
+      &:active {
+         background-color: $error-140;
+      }
 
-      #{$hover} {
-         background-color: $warning;
+      &[disabled] {
+         background-color: $error-10;
+         color: $space-30;
       }
    }
 
-   &.button-success {
-      background-color: $success;
 
-      #{$hover} {
-         background-color: $success-120;
+   &.button-borderless {
+      background-color: $space-5;
+      color: $space-80;
+
+      &:hover {
+         background-color: $space-10;
+         color: $space;
+      }
+
+      &:active {
+         background-color: $space-5;
+         color: $space-80;
+      }
+
+      &[disabled] {
+         background-color: $space-5;
+         color: $space-30;
       }
    }
 
@@ -249,11 +207,7 @@ $hover: '&:not([disabled]):hover';
       border-radius: 4px;
       border:solid 1px $neutral-8;
       background-color: white;
-
-      &[disabled] {
-         border: none;
-         background-color: $neutral-8;
-      }
+      cursor: pointer;
 
       &.small {
          & i {
@@ -261,8 +215,14 @@ $hover: '&:not([disabled]):hover';
          }
       }
 
-      #{$hover} {
+      &:hover {
          border:solid 1px $neutral-30;
+      }
+
+      &[disabled] {
+         border: none;
+         background-color: $neutral-8;
+         cursor:     not-allowed;
       }
 
       i {

@@ -9,6 +9,13 @@
 **Breaking changes:**
 
 * st-table: Apply new UX specifications and remove custom theme 'white'
+* buttons: Changed button styles and renamed button classes:\
+    button-secondary-gray -> button-borderless\
+    button-secondary-line -> button-secondary\
+    button-link-primary -> button-link\
+    button-link-secondary -> removed\
+    button-warning -> removed\
+    button-success -> removed
 
 **Others:**
 

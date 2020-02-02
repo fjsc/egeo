@@ -74,7 +74,7 @@ export class StModalService {
       if (type !== StModalBasicType.INFO) {
          buttons.unshift({
             label: cancelButton,
-            classes: type === StModalBasicType.DELETE ? 'button-secondary-gray' : 'button-secondary-line',
+            classes: type === StModalBasicType.DELETE ? 'button-borderless' : 'button-secondary',
             responseValue: StModalResponse.NO,
             closeOnClick: true
          });

@@ -170,7 +170,7 @@ describe('StModal', () => {
          service.container = containerRef;
 
          const buttons: StModalButton[] = [
-            { label: cancelButton, classes: 'button-secondary-gray', responseValue: StModalResponse.NO, closeOnClick: true },
+            { label: cancelButton, classes: 'button-borderless', responseValue: StModalResponse.NO, closeOnClick: true },
             { label: okButton, classes: 'button-critical', responseValue: StModalResponse.YES, closeOnClick: true }
          ];
 

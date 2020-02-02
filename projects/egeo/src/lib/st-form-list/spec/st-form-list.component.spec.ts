@@ -59,7 +59,7 @@ describe('[StFormList]', () => {
 
    describe('should allow to customize the label of the button to add more items', () => {
       it('if button label is not introduced as input, a default label is displayed', () => {
-         expect(fixture.nativeElement.querySelector('.button.button-link-primary').innerText).toContain('Add one more item');
+         expect(fixture.nativeElement.querySelector('.button.button-link').innerText).toContain('Add one more item');
       });
 
       it('if label is introduced as input, it is added to the button', () => {
@@ -67,7 +67,7 @@ describe('[StFormList]', () => {
          component.buttonLabel = 'Add items';
          fixture.detectChanges();
 
-         expect(fixture.nativeElement.querySelector('.button.button-link-primary').innerText).toContain(buttonLabel);
+         expect(fixture.nativeElement.querySelector('.button.button-link').innerText).toContain(buttonLabel);
       });
    });
 
@@ -109,7 +109,7 @@ describe('[StFormList]', () => {
          component.schema = TWO_INPUTS_JSON_SCHEMA;
          fixture.detectChanges();
 
-         fixture.nativeElement.querySelector('.button.button-link-primary').click();
+         fixture.nativeElement.querySelector('.button.button-link').click();
          fixture.detectChanges();
          fixture.whenStable().then(() => {
             fixture.detectChanges();
@@ -136,7 +136,7 @@ describe('[StFormList]', () => {
          fixture.detectChanges();
 
          spyOn(component.add, 'emit');
-         fixture.nativeElement.querySelector('.button.button-link-primary').click();
+         fixture.nativeElement.querySelector('.button.button-link').click();
          fixture.detectChanges();
 
          expect(component.add.emit).toHaveBeenCalledWith({ position: fakeModel.length, model: component.value });
@@ -291,7 +291,7 @@ describe('StFormListComponent in reactive form', () => {
       it('button to add new items has to be hidden', () => {
          reactiveFixture.whenStable().then(() => {
             reactiveFixture.detectChanges();
-            expect(reactiveFixture.nativeElement.querySelector('.button.button-link-primary')).toBeNull();
+            expect(reactiveFixture.nativeElement.querySelector('.button.button-link')).toBeNull();
          });
       });
 
@@ -306,7 +306,7 @@ describe('StFormListComponent in reactive form', () => {
          }
          reactiveFixture.whenStable().then(() => {
             reactiveFixture.detectChanges();
-            expect(reactiveFixture.nativeElement.querySelector('.button.button-link-primary')).not.toBeNull();
+            expect(reactiveFixture.nativeElement.querySelector('.button.button-link')).not.toBeNull();
             done();
          });
       });

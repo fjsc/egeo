@@ -20,7 +20,7 @@
    <h1 *ngIf="schema.title && !isASwitchSection()" class="title" (click)="onClickTitle()">{{schema.title}}</h1>
    <p *ngIf="schema.description && nestingLevel <= sectionDescriptionLevel" class="description">{{schema.description}}</p>
    <span class="optional-fields-button" *ngIf="iShowMoreSection()">
-   <button class="button button-link-primary"
+   <button class="button button-link"
            (click)="onChangeOptionalFieldsVisibility()">
       <span> <i
          [ngClass]="{'icon-arrow2_down': showCollapsedSectionFields, 'icon-arrow2_right': !showCollapsedSectionFields}"></i> {{getOptionalButtonLabel()}}</span>
