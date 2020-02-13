@@ -47,7 +47,7 @@
 %button-toolbar-ico-default {
    color:         $neutral-60;
    font-family:   $egeo-stratio-icons;
-   font-size:     $egeo-font-size-16;
+   font-size:     $egeo-font-size-18;
    line-height:   $egeo-line-height-22;
    &[disabled] {
       color:      $neutral-20;
@@ -232,7 +232,7 @@
 
       i {
          display: block;
-         padding:0.625rem;
+         padding: 0.7142857rem;
       }
    }
 }
