@@ -13,7 +13,7 @@ import { ComponentRef } from '@angular/core';
 import { StModalComponent } from './st-modal.component';
 
 export enum StModalResponse { YES, NO, CLOSE }
-export enum StModalBasicType { DELETE, CONFIRM, INFO }
+export enum StModalBasicType { DELETE, CONFIRM, INFO, WARNING }
 
 export class StModalButton {
    response?: Function;
@@ -38,6 +38,7 @@ export class StModalConfig {
    minWidth?: number;
    empty?: boolean;
    showCloseBtn?: boolean;
+   iconStatus?: string;
 }
 
 export class StModalButtonResponse {

@@ -23,8 +23,8 @@
 
    .st-modal {
       background-color: $neutral-full;
-      box-shadow: 0 1px 10px 0 rgba($neutral-60, 0.8);
       border-radius: 4px;
+      box-shadow: 0 1px 10px 0 rgba($neutral-60, 0.8);
       display: flex;
       flex-direction: column;
 
@@ -34,38 +34,47 @@
 
       &.st-modal-fullscreen {
          border-radius: 0;
+
          .st-modal-header {
-            border-radius: 0;
             background-color: $neutral-full;
+            border-radius: 0;
          }
          background-color: $neutral-4;
       }
 
       .st-modal-header {
-         background-color: $neutral-4;
-         padding: 0 30px;
+         background-color: $neutral-full;
          border-radius: 4px 4px 0 0;
+         padding: 0 30px;
 
          .title {
-            text-align: left;
-            font-weight: 900;
-            font-size: $egeo-font-size-18;
-            line-height: $egeo-line-height-22;
             color: $neutral;
+            font-size: $egeo-font-size-18;
+            font-weight: 900;
+            line-height: $egeo-line-height-22;
+            text-align: left;
             white-space: nowrap;
          }
 
          .close-button {
+            color: $neutral;
+            cursor: pointer;
             font-family: $egeo-stratio-icons;
             font-size: $egeo-font-size-20;
-            color: $neutral;
-            font-weight: normal;
-            font-style: normal;
             font-stretch: normal;
-            line-height: normal;
+            font-style: normal;
+            font-weight: normal;
             letter-spacing: normal;
+            line-height: normal;
             margin-left: auto;
-            cursor: pointer;
+         }
+
+         .status-icon.icon-circle-cross {
+            color: $error;
+         }
+
+         .status-icon.icon-alert{
+            color: $warning;
          }
       }
 
@@ -77,21 +86,21 @@
          }
 
          .st-modal-message-plain-title {
+            color: $space-110;
             font-weight: 100;
             font-size: $egeo-font-size-xxlarge;
             line-height: $egeo-line-height-xxxlarge;
-            text-align: left;
-            color: $space-110;
             margin-bottom: 15px;
             overflow-wrap: break-word;
+            text-align: left;
          }
          .st-modal-message-plain-message {
-            font-weight: normal;
-            font-size: $egeo-font-size-16;
-            line-height: $egeo-line-height-small;
-            text-align: left;
             color: $neutral-70;
+            font-weight: normal;
+            font-size: $egeo-font-size-14;
+            line-height: $egeo-line-height-small;
             overflow-wrap: break-word;
+            text-align: left;
          }
       }
 
