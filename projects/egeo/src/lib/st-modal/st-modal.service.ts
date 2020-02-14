@@ -61,12 +61,14 @@ export class StModalService {
       okButton: string,
       cancelButton: string = '',
       maxWidth: number = 600,
-      minWidth: number = 400
+      minWidth: number = 400,
+      icon: string = ''
    ): Observable<StModalResponse> {
+      let iconStatus: string;
 
       const buttons: StModalButton[] = [{
          label: okButton,
-         classes: type === StModalBasicType.DELETE ? 'button-critical' : 'button-primary',
+         classes: (type === StModalBasicType.DELETE) ? 'button-critical' : 'button-primary',
          responseValue: StModalResponse.YES,
          closeOnClick: true
       }];
@@ -74,11 +76,24 @@ export class StModalService {
       if (type !== StModalBasicType.INFO) {
          buttons.unshift({
             label: cancelButton,
-            classes: type === StModalBasicType.DELETE ? 'button-borderless' : 'button-secondary',
+            classes: (type === StModalBasicType.DELETE) ? 'button-borderless' : 'button-secondary',
             responseValue: StModalResponse.NO,
             closeOnClick: true
          });
       }
+
+      switch (type) {
+         case StModalBasicType.DELETE:
+            iconStatus = 'icon-circle-cross';
+            break;
+         case StModalBasicType.WARNING:
+            iconStatus = 'icon-alert';
+            break;
+         default:
+            iconStatus = icon;
+            break;
+      }
+
       return this.show({
          fullscreen: false,
          message,
@@ -86,7 +101,8 @@ export class StModalService {
          modalTitle,
          buttons,
          maxWidth,
-         minWidth
+         minWidth,
+         iconStatus
       });
    }
 

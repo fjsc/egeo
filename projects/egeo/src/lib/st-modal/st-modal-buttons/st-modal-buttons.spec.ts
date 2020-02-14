@@ -42,11 +42,11 @@ describe('StModal', () => {
          ];
       });
 
-      it('should be init conrrectly', () => {
+      it('should be init correctly', () => {
          comp.buttonConfig = buttons;
          fixture.detectChanges();
-         expect(comp.getButtonClass(buttons[0])).toEqual(`${buttons[0].classes} large`);
-         expect(comp.getButtonClass(buttons[1])).toEqual('large');
+         expect(comp.getButtonClass(buttons[0])).toEqual(`${buttons[0].classes}`);
+         expect(comp.getButtonClass(buttons[1])).toEqual('');
          expect(comp.getButtonId(buttons[0])).toEqual('st-modal-button-Yes_Button');
          expect(comp.hasButtons).toBeTruthy();
       });
@@ -81,9 +81,9 @@ describe('StModal', () => {
          const subtype2: StModalButton = { label: 'label', classes: 'secondary' };
          fixture.detectChanges();
 
-         expect(comp.getButtonClass(undefined)).toEqual('large');
-         expect(comp.getButtonClass(subtype1)).toEqual('primary large');
-         expect(comp.getButtonClass(subtype2)).toEqual('secondary large');
+         expect(comp.getButtonClass(undefined)).toEqual('');
+         expect(comp.getButtonClass(subtype1)).toEqual('primary');
+         expect(comp.getButtonClass(subtype2)).toEqual('secondary');
       });
 
       it('should get button class on fullscreen', () => {

@@ -36,7 +36,6 @@ export class StModalButtonsComponent implements OnInit {
 
    getButtonClass(button: StModalButton): string {
       let classes: string = button && button.classes ? button.classes : '';
-      classes += !this.fullscreen ? ' large' : '';
       return classes.trim();
    }
 

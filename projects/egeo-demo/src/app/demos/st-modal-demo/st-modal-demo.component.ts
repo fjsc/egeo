@@ -100,6 +100,17 @@ export class StModalDemoComponent implements AfterViewInit {
          .subscribe((response) => this._logger.notifyAlert(StDemoLoggerSeverity.INFO, this.evaluateResponse(response)));
    }
 
+   showModalWithComponentAndIcon(): void {
+      this._modalService.show({
+         modalTitle: 'With component',
+         buttons: this.buttons,
+         maxWidth: 600,
+         minWidth: 400,
+         iconStatus: 'icon-home'
+      }, StModalDemoTestComponent)
+         .subscribe((response) => this._logger.notifyAlert(StDemoLoggerSeverity.INFO, this.evaluateResponse(response)));
+   }
+
    showModalWithoutButtons(): void {
       this._modalService.show({
          modalTitle: 'With component',
@@ -161,6 +172,7 @@ export class StModalDemoComponent implements AfterViewInit {
    private getTitle(text: string): string {
       switch (text) {
          case 'delete': return 'Delete';
+         case 'warning': return 'Warning';
          case 'confirm': return 'Confirmation';
          case 'info': return 'Info';
          default: return '';
@@ -170,6 +182,7 @@ export class StModalDemoComponent implements AfterViewInit {
    private getAcceptButton(text: string): string {
       switch (text) {
          case 'delete': return 'Delete';
+         case 'warning': return 'Accept';
          case 'confirm': return 'Accept';
          case 'info': return 'Accept';
          default: return '';
@@ -179,6 +192,7 @@ export class StModalDemoComponent implements AfterViewInit {
    private getCancelButton(text: string): string {
       switch (text) {
          case 'delete': return 'Cancel';
+         case 'warning': return 'Cancel';
          case 'confirm': return 'Not now';
          case 'info': return '';
          default: return '';
@@ -188,6 +202,7 @@ export class StModalDemoComponent implements AfterViewInit {
    private getBasicType(text: string): StModalBasicType {
       switch (text) {
          case 'delete': return StModalBasicType.DELETE;
+         case 'warning': return StModalBasicType.WARNING;
          case 'confirm': return StModalBasicType.CONFIRM;
          case 'info': return StModalBasicType.INFO;
          default: return StModalBasicType.INFO;

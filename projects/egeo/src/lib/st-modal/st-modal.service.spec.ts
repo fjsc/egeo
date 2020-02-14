@@ -185,10 +185,46 @@ describe('StModal', () => {
             html: undefined,
             maxWidth: 600,
             minWidth: 400,
-            empty: false
+            empty: false,
+            iconStatus: 'icon-circle-cross'
          };
 
          service.showBasicModal(StModalBasicType.DELETE, deleteModalTitle, deleteMessageTitle, deleteMessage, okButton, cancelButton, 600, 400);
+         expect(instanceObj.modalConfig).toEqual(Object.assign({}, deleteConfig, { maxWidth: 600 }));
+         expect(instanceObj.modalConfig).toEqual(Object.assign({}, deleteConfig, { minWidth: 400 }));
+
+      });
+
+      it('should generate a warning confirmation modal config', () => {
+         const okButton: string = 'Warning';
+         const cancelButton: string = 'Cancel';
+         const warningModalTitle: string = 'warning modal title';
+         const warningMessageTitle: string = 'warning message title';
+         const warningMessage: string = 'warning message';
+         service = new StModalService(cfr);
+         service.container = containerRef;
+
+         const buttons: StModalButton[] = [
+            { label: cancelButton, classes: 'button-secondary', responseValue: StModalResponse.NO, closeOnClick: true },
+            { label: okButton, classes: 'button-primary', responseValue: StModalResponse.YES, closeOnClick: true }
+         ];
+
+         const deleteConfig: StModalConfig = {
+            fullscreen: false,
+            inputs: {},
+            outputs: {},
+            modalTitle: warningModalTitle,
+            messageTitle: warningMessageTitle,
+            buttons: buttons,
+            message: warningMessage,
+            html: undefined,
+            maxWidth: 600,
+            minWidth: 400,
+            empty: false,
+            iconStatus: 'icon-alert'
+         };
+
+         service.showBasicModal(StModalBasicType.WARNING, warningModalTitle, warningMessageTitle, warningMessage, okButton, cancelButton, 600, 400);
          expect(instanceObj.modalConfig).toEqual(Object.assign({}, deleteConfig, { maxWidth: 600 }));
          expect(instanceObj.modalConfig).toEqual(Object.assign({}, deleteConfig, { minWidth: 400 }));
 

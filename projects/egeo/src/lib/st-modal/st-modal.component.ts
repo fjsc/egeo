@@ -50,6 +50,10 @@ export class StModalComponent implements OnDestroy, AfterViewInit {
       private windowRef: StWindowRefService
    ) { }
 
+   get hasIcon(): string {
+      return this.modalConfig.iconStatus;
+   }
+
    get isFullscreen(): boolean {
       return this.modalConfig.fullscreen;
    }
