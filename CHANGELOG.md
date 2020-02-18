@@ -6,6 +6,10 @@
 
 * st-header: Include new UX defined styles to header
 
+**Others:**
+
+* Update icon font to 1.27
+
 ## 19.0.0 (upcoming)
 **New features:**
 * st-two-list-selection: allows to show and control movement of disabled items
