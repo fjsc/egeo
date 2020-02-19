@@ -11,14 +11,16 @@
 * Update icon font to 1.27
 
 ## 19.0.0 (upcoming)
+
 **New features:**
-* st-two-list-selection: allows to show and control movement of disabled items
-in origin list (optional parameter).
+
+* st-two-list-selection: allows to show and control movement of disabled items in origin list (optional parameter).
 
 **Fixed bugs:**
 
 * st-dropdown-menu: Do not diplay dropdown items in several lines with menu list visualization
 * st-modal: Do not break words
+* st-dropdown-menu: Fix wrong visualization of select dropdown
 
 **Breaking changes:**
 
@@ -34,6 +36,7 @@ in origin list (optional parameter).
 
 **Others:**
 
+* Update to Angular 8 and include angular elements generator
 * Update icon palette
 * Update font size variables
 * st-select: Apply new UX font size and color in forms

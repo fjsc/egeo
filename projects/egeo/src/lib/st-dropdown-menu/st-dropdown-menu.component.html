@@ -16,7 +16,7 @@
       <ng-content></ng-content>
    </div>
 
-   <div pop-content [style.z-index]="9">
+   <div pop-content [style.z-index]="9" class="dropdown-content">
 
       <div *ngIf="active" [ngClass]="listClasses" [style.minWidth]='widthMenu'>
          <ng-content select=[dropdown-header]></ng-content>

@@ -115,7 +115,7 @@
    }
 
    &:not(.menu-list) .label {
-      word-break: break-word;
+      overflow-wrap: break-word;
    }
 }
 
