@@ -20,7 +20,9 @@ import {
    Injector,
    Input,
    Output,
-   ViewChild
+   ViewChild,
+   OnChanges,
+   SimpleChanges
 } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { cloneDeep as _cloneDeep, flatten as _flatten, has as _has } from 'lodash';
@@ -40,7 +42,7 @@ import { StDropDownMenuGroup, StDropDownMenuItem } from '../st-dropdown-menu/st-
       { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => StSelectComponent), multi: true }
    ]
 })
-export class StSelectComponent implements AfterViewInit, ControlValueAccessor {
+export class StSelectComponent implements AfterViewInit, ControlValueAccessor, OnChanges {
 
    @Input() placeholder: string = '';
    @Input() name: string = '';
@@ -62,8 +64,8 @@ export class StSelectComponent implements AfterViewInit, ControlValueAccessor {
    @Output() scrollAtBottom: EventEmitter<any> = new EventEmitter<any>();
    @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
-   @ViewChild('input', {static: false}) inputElement: ElementRef;
-   @ViewChild('button', {static: false}) buttonElement: ElementRef;
+   @ViewChild('input', { static: false }) inputElement: ElementRef;
+   @ViewChild('button', { static: false }) buttonElement: ElementRef;
 
    @HostBinding('class.st-select-opened')
 
@@ -80,8 +82,8 @@ export class StSelectComponent implements AfterViewInit, ControlValueAccessor {
 
 
    constructor(private _selectElement: ElementRef,
-               private _injector: Injector,
-               private _cd: ChangeDetectorRef) {
+      private _injector: Injector,
+      private _cd: ChangeDetectorRef) {
    }
 
    // TODO: MOVE THIS TO FORM-BASE
@@ -105,11 +107,6 @@ export class StSelectComponent implements AfterViewInit, ControlValueAccessor {
    @Input()
    set options(options: StDropDownMenuItem[] | StDropDownMenuGroup[]) {
       this._options = _cloneDeep(options);
-      const selectedItem: StDropDownMenuItem | undefined = this.findByProperty('selected', true);
-      this.removeAllSelected();
-      if (selectedItem) {
-         this.selected = selectedItem;
-      }
    }
 
    get options(): StDropDownMenuItem[] | StDropDownMenuGroup[] {
@@ -193,6 +190,16 @@ export class StSelectComponent implements AfterViewInit, ControlValueAccessor {
    /*
     ****** Component methods ******
     */
+
+   ngOnChanges(changes: SimpleChanges): void {
+      if (changes.options) {
+         const selectedItem: StDropDownMenuItem | undefined = this.findByProperty('selected', true);
+         if (selectedItem) {
+            this.removeAllSelected();
+            this.selected = selectedItem;
+         }
+      }
+   }
 
    ngAfterViewInit(): void {
       this._inputHTMLElement = this.inputElement.nativeElement;
