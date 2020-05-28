@@ -30,6 +30,7 @@
 * st-table: The height of the table must be defined when fixedHeader is true
 * theme: Removed $input-field-error from colors. Use $error color
 * st-fullscreen-layout: Implement close output event or disable scroll button
+* st-select: Fixed selected value
 
 **Fixed bugs:**
 
